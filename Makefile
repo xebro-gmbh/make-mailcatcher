@@ -7,4 +7,3 @@ mailcatcher.install:
 	$(call add_config,".env","docker/mailcatcher/.env")
 
 install: mailcatcher.install
-
