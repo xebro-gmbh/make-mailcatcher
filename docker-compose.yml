@@ -1,0 +1,21 @@
+services:
+  mailcatcher:
+    image: dockage/mailcatcher:0.9.0
+    env_file:
+      - ${XEBRO_ROOT_DIR}/.env
+      - ${XEBRO_ROOT_DIR}/.env.local
+    restart: on-failure 
+    ports:
+      - 1080:1080
+      - 1025
+#    labels:
+#      traefik.enable: "true"
+#      traefik.http.routers.mailcatcher-tls.entrypoints: websecure
+#      traefik.http.routers.mailcatcher-tls.rule: PathPrefix(`/`)
+#      traefik.http.routers.mailcatcher-tls.tls: "true"
+#      
+#      traefik.http.services.mailcatcher-tls.loadbalancer.server.port: 1080
+#      traefik.http.routers.mailcatcher.entrypoints: web
+#      traefik.http.routers.mailcatcher.rule: PathPrefix(`/`)
+#      traefik.http.services.mailcatcher.loadbalancer.server.port: 1080
+
